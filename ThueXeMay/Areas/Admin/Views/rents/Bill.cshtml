@@ -5,8 +5,7 @@
     var item = (TimeSpan)(Model.date_end - Model.date_start);
     var day = item.Days;
     var hour = item.Hours;
-    var tong = (day * 10 + hour) * Model.money_hour;
-
+    var tong = (day * 10 + hour) * (Model.money_hour ?? 0);
 
     <div class="col-xxl-6 col-xl-8">
         <br /><br />
@@ -33,7 +32,7 @@
         </div>
         <div class="row ">
             <div class="col text-black-75"><i>Giá / giờ:</i></div>
-            <div class="col text-red" style="font-size:20px">@Model.money_hour.ToString("#,##0").Replace(',', '.')<small>VNĐ</small></div>
+            <div class="col text-red" style="font-size:20px">@((Model.money_hour ?? 0).ToString("#,##0").Replace(',', '.'))<small>VNĐ</small></div>
         </div>
         <div class="row ">
             <div class="col text-black-75"><i>Tổng tiền:</i></div>
@@ -46,4 +45,3 @@ else
 {
     <h3>Đơn thuê chưa hoàn thành</h3>
 }
-

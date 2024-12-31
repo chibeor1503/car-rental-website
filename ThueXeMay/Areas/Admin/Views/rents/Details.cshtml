@@ -35,7 +35,7 @@
             </div><br />
             <div class="col-lg-10">
                 <br />
-                <button class="btn btn-outline-secondary me-5" onclick="location.href='@Url.Action("Index", "rents")'" type="button">Trở về</button>
+                <button class="btn btn-outline-secondary me-5" onclick="location.href='@Url.Action(" Index", "rents" )'" type="button">Trở về</button>
                 @if (@Model.bills.Where(i => i.id_rent == Model.id_rent).Count() == 0)
                 {
                     <button class="btn btn-outline-primary me-5 " id="time_start" type="button">Bắt đầu tính giờ</button>
@@ -43,7 +43,7 @@
                 else
                 {
                     <button class="btn btn-outline-primary me-5 " title="@Model.bills.Where(i=>i.id_rent == Model.id_rent).Select(j=>j.date_start).First()" id="time_start" type="button">Bắt đầu tính giờ</button>
-                    <button class="btn btn-outline-danger me-5 " id="time_end" onclick="location.href='@Url.Action("rent_end", "rents",new {id=Model.id_rent})'" type="button">Kết thúc tính giờ, xuất hoá đơn</button>
+                    <button class="btn btn-outline-danger me-5 " id="time_end" onclick="location.href='@Url.Action(" rent_end", "rents" ,new {id=Model.id_rent})'" type="button">Kết thúc tính giờ, xuất hoá đơn</button>
                     if (Model.bills.Where(i => i.id_rent == Model.id_rent).Select(j => j.date_end).First() != null)
                     {
                         <button class="btn btn-outline-danger" id="time_end" type="button"><a href="#viewBill" style="text-decoration:none" data-toggle="modal">Xem hoá đơn</a></button>
@@ -70,23 +70,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $("#time_start").click(function () {
-                _id = $("#madonthue").val();
-                    $.ajax({
-                        type: "POST",
-                        url: "@Url.Action("rent_start","rents")",
-                        data: { id: _id },
-                        success: function (data) {
-                            if (data.status) {
-                                alert("Bắt đầu tính giờ thành công");
-                            }
-                            else {
-                                alert("Giờ đã được bắt đầu tính trước đó!!!");
-                            }
-                        }
-                    });
-            })
+    $(document).ready(function () {
+        $("#time_start").click(function () {
+            _id = $("#madonthue").val();
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("rent_start","rents")",
+                data: { id: _id },
+                success: function (data) {
+                    if (data.status) {
+                        alert("Bắt đầu tính giờ thành công");
+                    }
+                    else {
+                        alert("Giờ đã được bắt đầu tính trước đó!!!");
+                    }
+                }
+            });
         })
+    })
     </script>
 }
