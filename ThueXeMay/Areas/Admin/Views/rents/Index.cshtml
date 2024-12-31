@@ -33,6 +33,7 @@
                         <tr>
                             <th>STT</th>
                             <th>Mã đơn</th>
+                            <th>Mã khách hàng</th>
                             <th>Tên khách hàng</th>
                             <th>SĐT</th>
                             <th>Ngày giờ</th>
@@ -43,6 +44,7 @@
                         <tr>
                             <th>STT</th>
                             <th>Mã đơn</th>
+                            <th>Mã khách hàng</th>
                             <th>Tên khách hàng</th>
                             <th>SĐT</th>
                             <th>Ngày giờ</th>
@@ -58,6 +60,9 @@
                                 <td>@i</td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.id_rent)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.id_user)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.name)

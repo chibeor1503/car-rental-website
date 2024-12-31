@@ -82,7 +82,7 @@ namespace ThueXeMay.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Checkout(string inputUsername, string inputPhone, string inputEmail, string inputNote, int id)
+        public ActionResult Checkout(string inputUsername, string inputPhone, string inputEmail, string inputNote, int? id)
         {
             //try
             //{

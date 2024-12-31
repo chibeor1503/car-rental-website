@@ -8,8 +8,8 @@
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
             <div class="col-md-0 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="~/Home">Danh sách bình luận <i class="ion-ios-arrow-forward"></i></a></span> <span>Đổi mật khẩu<i class="ion-ios-arrow-forward"></i></span></p>
-                <h1 class="mb-3 bread">Danh sách bình luận</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="~/Home">Lịch sử bình luận <i class="ion-ios-arrow-forward"></i></a></span> <span>Đổi mật khẩu<i class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-3 bread">Lịch sử bình luận</h1>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
                                 <td>@i</td>
                                 <td>@item.Title</td>
                                 <td>@item.Content</td>
-                                <td>@item.Date</td>
+                                <td>@item.Date.Value.ToString("dd/MM/yyyy")</td>
                             </tr>
                             i++;
                         }
